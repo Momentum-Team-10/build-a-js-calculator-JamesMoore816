@@ -18,6 +18,17 @@ let b_decimal = document.getElementById('decimal');
 let b_equals = document.getElementById('equals');
 let b_C = document.getElementById('C');
 
+let hasDecimal = false;
+
+function checkForNumber() {
+    if ((display.innerText.slice(-1) == '+') ||
+    (display.innerText.slice(-1) == '-') ||
+    (display.innerText.slice(-1) == '/') ||
+    (display.innerText.slice(-1) == '*') ) {
+        return false}
+        else return true
+    }
+
 b1.addEventListener('click', () => {
     display.innerText += b1.innerText
 })
@@ -49,24 +60,43 @@ b0.addEventListener('click', () => {
     display.innerText += b0.innerText
 })
 b_decimal.addEventListener('click', () => {
-    if (display.innerText.includes('.') === false) { display.innerText += b_decimal.innerText }
+    if (hasDecimal == false) {
+    display.innerText += b_decimal.innerText
+    hasDecimal = true;
+    }
+    // if (display.innerText.includes('.') === false) { display.innerText += b_decimal.innerText }
 })
 b_add.addEventListener('click', () => {
+    if (checkForNumber()) {
     display.innerText += b_add.innerText
+    hasDecimal = false
+    }
 })
 b_subtract.addEventListener('click', () => {
+    if (checkForNumber()) {
     display.innerText += b_subtract.innerText
+    hasDecimal = false
+    }
 })
 b_divide.addEventListener('click', () => {
+    if (checkForNumber()) {
     display.innerText += b_divide.innerText
+    hasDecimal = false
+    }
 })
 b_multiply.addEventListener('click', () => {
+    if (checkForNumber()) {
     display.innerText += '*'
+    hasDecimal = false
+    }
 })
 b_C.addEventListener('click', () => {
     display.innerText = ''
+    hasDecimal = false
 })
 
 b_equals.addEventListener('click', () => {
-    display.innerText = eval(display.innerText)
+    if (checkForNumber()) {
+    display.innerText = parseFloat(eval(display.innerText))
+    }
 })
