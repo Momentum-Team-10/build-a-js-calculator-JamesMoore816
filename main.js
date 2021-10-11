@@ -118,6 +118,7 @@ b_C.addEventListener('click', () => {
 
 b_equals.addEventListener('click', () => {
     if (checkForNumber()) {
-    display.innerText = parseFloat(eval(display.innerText))
+        //converts math result to string and substring to limit characters used
+        display.innerText = eval(display.innerText).toString().substring(0,11);
     }
 })
