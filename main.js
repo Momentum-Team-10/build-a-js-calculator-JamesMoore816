@@ -30,62 +30,83 @@ function checkForNumber() {
     }
 
 b1.addEventListener('click', () => {
+    if (display.innerText.length < 12) {
     display.innerText += b1.innerText
+    }
 })
 b2.addEventListener('click', () => {
+    if (display.innerText.length < 12) {
     display.innerText += b2.innerText
+    }
 })
 b3.addEventListener('click', () => {
+    if (display.innerText.length < 12) {
     display.innerText += b3.innerText
+    }
 })
 b4.addEventListener('click', () => {
+    if (display.innerText.length < 12) {
     display.innerText += b4.innerText
+    }
 })
 b5.addEventListener('click', () => {
+    if (display.innerText.length < 12) {
     display.innerText += b5.innerText
+    }
 })
 b6.addEventListener('click', () => {
+    if (display.innerText.length < 12) {
     display.innerText += b6.innerText
+    }
 })
 b7.addEventListener('click', () => {
+    if (display.innerText.length < 12) {
     display.innerText += b7.innerText
+    }
 })
 b8.addEventListener('click', () => {
+    if (display.innerText.length < 12) {
     display.innerText += b8.innerText
+    }
 })
 b9.addEventListener('click', () => {
+    if (display.innerText.length < 12) {
     display.innerText += b9.innerText
+    }
 })
 b0.addEventListener('click', () => {
+    if (display.innerText.length < 12) {
     display.innerText += b0.innerText
+    }
 })
 b_decimal.addEventListener('click', () => {
-    if (hasDecimal == false) {
+    if (hasDecimal == false && display.innerText.length < 11) {
     display.innerText += b_decimal.innerText
     hasDecimal = true;
     }
     // if (display.innerText.includes('.') === false) { display.innerText += b_decimal.innerText }
 })
 b_add.addEventListener('click', () => {
-    if (checkForNumber()) {
+
+    if (checkForNumber() && display.innerText.length < 11) {
     display.innerText += b_add.innerText
     hasDecimal = false
     }
 })
 b_subtract.addEventListener('click', () => {
-    if (checkForNumber()) {
+    if (checkForNumber() && display.innerText.length < 11) {
     display.innerText += b_subtract.innerText
     hasDecimal = false
     }
 })
 b_divide.addEventListener('click', () => {
-    if (checkForNumber()) {
+    if (checkForNumber() && display.innerText.length < 11) {
     display.innerText += b_divide.innerText
     hasDecimal = false
     }
 })
 b_multiply.addEventListener('click', () => {
-    if (checkForNumber()) {
+    if (checkForNumber() && display.innerText.length < 11) {
     display.innerText += '*'
     hasDecimal = false
     }
